@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script src="demo5.js"></script>
+</head>
+<body>
+	<input type="button" id="" value="Go" name="">
+	<div class="load">
+		<ul></ul>
+	</div>
+	<script>
+		$("input[type=button]").click(function(){
+			var ul = $(".load>ul");
+			$.ajax({
+				url:'demo4.php?'+Math.random(),
+				type:'GET',
+				dataType:'xml',
+				success:function(data){
+					$(data).find('title').each(function(){
+						ul.append("<li>"+$(this).text()+"</li>");
+					});
+				}
+			});
+		})
+	</script>
+</body>
+</html>

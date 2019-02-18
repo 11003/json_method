@@ -1,0 +1,18 @@
+
+[
+		{
+			"img":"/images/swiper01.jpg",
+			"title":"dog",
+			"desc":3
+		},
+		{
+			"img":"/images/swiper02.jpg",
+			"title":"kitty",
+			"desc":2
+		},
+		{
+			"img":"/images/swiper03.jpg",
+			"title":"cat",
+			"desc":4
+		}
+]

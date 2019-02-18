@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+	<input type="text" name="name" id="name">
+	<input type="button" value="go" name="">
+	<div class="load"></div>
+	<script>
+		// load请求
+		// $("input[type=button]").click(function(){
+		// 	var send = {'name' : $("#name").val()}
+		// 	$("div").load('demo2.php',send,function($data){
+		// 		alert(data);
+		// 	});
+		// });
+	
+
+		// $("input[type=button]").click(function(){
+		// 	var send = {'name' : $("#name").val()}
+		// 	$.get('demo2.php?date='+Math.random(0),function(data){
+		// 		$(".load").html(data);
+		// 	});
+		// });
+
+
+		$('#name').on('click',function(){
+			$.ajax({
+				url:'demo2.php?'+Math.random(),
+				type:'GET',
+				dataType:'json',
+				success:function(data){
+					$(".load").html(data)
+				}
+			});
+		});
+	</script>
+</body>
+</html>

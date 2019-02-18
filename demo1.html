@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.load{
+			padding: 50px;
+			border:1px solid #000;
+
+		}
+	</style>
+</head>
+<body>
+	<input type="button" name="" value="加载">
+	<div class="load"></div>
+</body>
+<script src="jquery-3.2.1.js"></script>
+<script>
+	$("input[type=button]").click(function(){
+		$(".load").load('test.txt?date='+Math.random());  //解决缓存
+	})
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script src="demo5.js"></script>
+	<style type="text/css">
+		#div{
+			width: 150px;
+			height: 150px;
+			background: yellow;
+		}
+	</style>
+</head>
+<body>
+<div id="div"></div>
+<script>
+	var div = $("#div");
+	div.hover(function(){
+		$.lcf.juzhong(div).css({"background":"red"});
+	});
+</script>	
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+</head>
+<body>
+	<input type="button" value="Go" name="">
+	<img src="avatar_m.jpg" id="img" style="display: none">
+	<div class="load">
+		<ul></ul>
+	</div>
+	<script>
+		$("input[type=button]").click(function(){
+			var ul = $(".load>ul");
+			$.ajax({
+				url:"demo3.php?"+Math.random(),
+				type:"GET",
+				dataType:"json",
+				success:function(data){
+					// alert(data[0].title);
+					var res = eval(data);
+					for(i in res){
+						console.log(res[i].title)
+						ul.append('<li>'+res[i].title+'<em>'+res[i].content+'</em></li>');
+					}
+				}
+			})
+		});
+		//加载事件
+		$(document).ajaxStart(function(){$("#img").show()}).ajaxStop(function(){$("#img").hide()});
+	</script>
+</body>
+</html>
